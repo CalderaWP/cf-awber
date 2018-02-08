@@ -108,7 +108,7 @@ $credentials_set = $credentials->all_set();
 				$( '#cf-aweber-auth' ).slideUp( "slow", function() {
 					$( this ).attr( 'aria-hidden', 'true' ).css( 'visibility', 'hidden' );
 					$( '#cf-aweber-setup' ).attr( 'aria-hidden', 'false' ).css( 'visibility', 'visible' ).show();
-                            getLists();
+                                    getLists();
 				});
 			});
 			xhr.error(function(r) {
