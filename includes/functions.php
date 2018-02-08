@@ -273,7 +273,7 @@ function cf_aweber_auth_save_ajax_cb(){
 		$response = cf_aweber_convert_code( $code );
 		if( ! $response ){
 			status_header( 500 );
-			wp_send_json_error( array( 'message' => esc_html__( 'Unknown error', 'cf-aweber' ) ) );
+			wp_send_json_error( array( 'message' => esc_html__( 'Wrong Aweber response for auth code', 'cf-aweber' ) ) );
 		}elseif( ! is_wp_error( $response ) ){
 			wp_send_json_success();
 		}else{
@@ -333,15 +333,23 @@ function cf_aweber_get_lists_ajax_cb(){
 			$client = new CF_Aweber_Client( $credentials );
 			$lists = $client->listLists();
 			if( is_array( $lists ) && ! empty( $lists ) ) {
+
 				wp_send_json_success( array( 'input' => Caldera_Forms_Processor_UI::config_field( cf_aweber_lists_field_config() ) ) );
+
+			} else {
+
+				wp_send_json_error( array( 'message' => __( 'No Lists Found', 'cf-aweber' ) ) );
+
 			}
+
+		} else {
+
+			wp_send_json_error( array( 'message' => __( 'Invalid authorization', 'cf-aweber' ) ) );
+
 		}
 
-		wp_send_json_error();
-
 	}
-	status_header( 404 );
-	die();
+	wp_send_json_error( array( 'message' => __( 'Invalid request', 'cf-aweber' ) ) );
 
 }
 
