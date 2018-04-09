@@ -3,7 +3,7 @@
  * Plugin Name: Aweber for Caldera Forms
  * Plugin URI:  https://calderawp.com
  * Description: Aweber newsletter integration for Caldera Forms
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author:      Josh Pollock for CalderaWP LLC
  * Author URI:  https://CalderaWP.com
  * License:     GPLv2+
@@ -33,7 +33,7 @@
 /**
  * Define constants
  */
-define( 'CF_AWEBER_VER', '1.0.4' );
+define( 'CF_AWEBER_VER', '1.0.5' );
 define( 'CF_AWEBER_URL',     plugin_dir_url( __FILE__ ) );
 define( 'CF_AWEBER_PATH',    dirname( __FILE__ ) . '/' );
 define( 'CF_AWEBER_CORE',    dirname( __FILE__ )  );

@@ -3,8 +3,8 @@ Contributors:      Shelob9, Desertsnowman
 Donate link:       https://calderawp.com
 Tags:              calderawp, caldera forms, wpform, form, responsive
 Requires at least: 4.0
-Tested up to:      4.3
-Stable tag: 1.0.4
+Tested up to:      4.9.5
+Stable tag: 1.0.5
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,11 @@ Awber for Caldera Forms
 * First release
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+* FIXED: Bug that prevent users ti be added to list
+* FIXED: Removed Warninh that showed during Aweber connection
+* ADDED: Meaningful Log notices
 
 = 0.1.0 =
 First Release
