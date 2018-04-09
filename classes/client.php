@@ -143,12 +143,7 @@ class CF_Aweber_Client extends  CF_Aweber_Base {
 	function addSubscriber( $subscriber, $list ) {
 		try {
 
-
-			$list = $this->findList( $list );
-			if ( ! is_object( $list ) ) {
-				return false;
-			}
-			$listUrl = "/accounts/{$this->account->id}/lists/{$list->id}";
+			$listUrl = "/accounts/{$this->account->id}/lists/{$list}";
 			$list    = $this->account->loadFromUrl( $listUrl );
 
 			$newSubscriber = $list->subscribers->create( $subscriber );
