@@ -75,7 +75,10 @@ function cf_aweber_lists( $skip_cache = false ){
 
 	$set = $credentials->all_set();
 	if( ! $set ){
-		return array();
+		$lists = array(
+			0 => sprintf( '-- %s --', __( 'Checking Aweber authorization', 'cf-aweber' ) )
+		);
+		return $lists;
 	}
 
 	
@@ -96,7 +99,7 @@ function cf_aweber_lists( $skip_cache = false ){
 
 	if( empty( $lists ) ){
 		$lists = array(
-			0 => sprintf( '-- %s --', __( 'Select A List', 'cf-aweber' ) )
+			0 => sprintf( '-- %s --', __( 'No list found', 'cf-aweber' ) )
 		);
 	}
 
